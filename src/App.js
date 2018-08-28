@@ -7,6 +7,8 @@ import Particles from 'react-particles-js';
 import './App.css';
 import Clarifai from 'clarifai';
 import FaceRecognition from './Component/FaceRecognition/FaceRecognition.js';
+import Signin from './Component/Signin/Signin.js';
+import Register from './Component/Register/Register.js';
 
 // initialize with your api key. 
 const app = new Clarifai.App({
@@ -31,8 +33,10 @@ class App extends Component {
      super();
      this.state = {
        input: '',
-       imageUrl : '',
-       box : {},
+       imageUrl: '',
+       box: {},
+       route: 'signin',
+       isSignedIn : false,
      }
   }
 
@@ -65,21 +69,44 @@ onButtonSubmit = () => {
   .catch(err => console.log(err));
 }
 
+onRouteChange = (route) => {
+   if(route === 'signout'){
+    this.setState({isSignedIn : false});
+   }
+   else 
+   if(route === 'home'){
+    this.setState({isSignedIn : true});
+   } 
+   this.setState({route : route });
+}
+
   render() {
+    const {isSignedIn,imageUrl,box,route} = this.state;
     return (
       <div className="App">
             <Particles className="particles"
               params={particlesOptions}
             />
-        <Navigation />
-        <Logo />
-        <Rank />
-        <ImageLinkForm 
-            onInputChange={this.onInputChange} 
-            onButtonSubmit={this.onButtonSubmit} 
-        /> 
-        <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl}/>
-             
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+        {
+          route === 'home' ? 
+              <div>
+                  <Logo />
+                  <Rank />
+                  <ImageLinkForm 
+                      onInputChange={this.onInputChange} 
+                      onButtonSubmit={this.onButtonSubmit} 
+                  /> 
+                  <FaceRecognition box={box} imageUrl={imageUrl}/>
+              </div>   
+             :  // Ternary Operator
+                (
+                  route === 'signin' ? 
+                      <Signin onRouteChange={this.onRouteChange}/>
+                  :  // Ternary Operator
+                      <Register onRouteChange={this.onRouteChange}/>
+                )       
+        }     
       </div>
     );
   }
