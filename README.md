@@ -1,4 +1,4 @@
-*Aim :*  A React App for recognizing face from Static images, and also keeping the count of the number of times you have used the application to find the faces in the image.  
+*Aim :*  __ A React App for recognizing face from Static images, and also keeping the count of the number of times you have used the application to find the faces in the image. __ 
 
 *Learning :* ** Advantages of Reusable front-end components, importance of REACT-DOM in minimizing the response time of an application, and the importance of React in creating single-page applications. ** 
 
