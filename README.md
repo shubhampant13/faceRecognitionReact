@@ -29,3 +29,22 @@
  iii) Clarifai\
   iv) Postman\
 **  
+
+1. signin:
+![signin](https://github.com/shubhampant13/faceRecognitionReact/blob/master/images/signin.PNG)
+2. Register New User:
+![Register New User](https://github.com/shubhampant13/faceRecognitionReact/blob/master/images/Registration_AnewUser.PNG)
+3. Signin as User:
+![Signin as User](https://github.com/shubhampant13/faceRecognitionReact/blob/master/images/signIn_shubhampant13.PNG)
+4. New user see's a count of 0:
+![What does a new user see](https://github.com/shubhampant13/faceRecognitionReact/blob/master/images/Anewuser_login.PNG)
+5.Enter the image URL and click "Detect" to send the image to Clarifai servers:
+![Need to enter an image URL in text box](https://github.com/shubhampant13/faceRecognitionReact/blob/master/images/Anewuser_login.PNG)
+6.Face detected example 1: 
+![Face detected example 1](https://github.com/shubhampant13/faceRecognitionReact/blob/master/images/face-detected.PNG)
+7. Face detected example 2:
+![Face detected example 2](https://github.com/shubhampant13/faceRecognitionReact/blob/master/images/face-detected_2.PNG)
+8.Face detected example 3:
+![Face detected example 3](https://github.com/shubhampant13/faceRecognitionReact/blob/master/images/face_detected_3.PNG)
+9. A look at the DB through Postgre SQL admin:
+![A look at the DB through Postgre SQL admin](https://github.com/shubhampant13/faceRecognitionReact/blob/master/images/database_look.PNG)
