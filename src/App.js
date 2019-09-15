@@ -101,7 +101,7 @@ onButtonSubmit = () => {
                         body : JSON.stringify({
                             id : this.state.user.id
                           })
-  /*Fetch close beg.*/ })
+   })
                 .then(response => response.json())
                 .then(count => {
                        this.setState(Object.assign(this.state.user,{entries:count})) 
@@ -110,6 +110,19 @@ onButtonSubmit = () => {
             this.displayFaceBox(this.calculateFaceLocation(response))
          }
   ).catch(err => console.log(err));
+ 
+
+/*
+ app.models.initModel({id: Clarifai.GENERAL_MODEL, version: "aa7f35c01e0642fda5cf400f543e7c40"})
+      .then(generalModel => {
+        return generalModel.predict(this.state.input);
+      })
+      .then(response => {
+        var concepts = response['outputs'][0]['data']['concepts'] 
+        console.log(response);
+      })
+*/
+  
 }
 
 onRouteChange = (route) => {
